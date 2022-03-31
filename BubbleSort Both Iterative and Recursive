@@ -1,0 +1,72 @@
+/*
+Bubble sort both the best case and worst case approach
+
+T.C. - Best case - O(N) if Array is already sorted
+       Worst case - O(N^2)
+S.C. - O(1)
+Stable - Yes
+InPlace - Yes
+
+*/
+
+
+
+import java.util.*;
+public class Main
+{
+    public static void bubble_sort(int arr[],int n)
+    {
+        for(int i = 0;i<n;i++)
+        {
+            int flag = 0;      // if the array is already sorted then we need to define flag as zero
+            for(int j = 0;j<n-i-1;j++)
+            {
+                if(arr[j]>arr[j+1])
+                {
+                    int tmp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tmp;
+                    flag++;   
+                
+                }
+                //flag++;
+            }
+            if(flag == 0) // if flag is still zero then it will reduce the complexity is O(n) this conditons is true when array is sorted
+            {
+                break;
+            }
+        }
+        
+        
+        for(int i = 0;i<n;i++)
+        {
+            System.out.println(arr[i]);
+        }
+    }
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    int[] arr = new int[n];
+	    for(int i = 0;i<n;i++)
+	    {
+	        arr[i] = sc.nextInt();
+	    }
+	    bubble_sort(arr,n);
+	}
+}
+
+
+//Recursive Algorithm
+
+Start -- Bubble_SortRec(arr,n)
+// Base case - 
+if n==1
+return;
+
+for(int i = 0 to n-1)
+    if arr[i] > arr[i+1]
+        swap arr[i],arr[i+1]
+ Bubble_SortRec(arr,n-1)
+ 
+ End--
