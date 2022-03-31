@@ -1,6 +1,15 @@
 
 /*
 Selection Sort
+
+Time complexity - O(N^2)
+Space Complexity - O(1)
+Inplace - Yes, (it doesn't require any extra space)
+Stable - Below algorithm is not Stable but we can make it stable by using   
+Selection sort can be made Stable if instead of swapping, the minimum element is placed in its position without swapping i.e. 
+by placing the number in its position by pushing every element one step forward In simple terms use a technique like insertion
+sort which means inserting element in its correct place
+
 */
 
 import java.util.*;
