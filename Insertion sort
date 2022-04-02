@@ -1,0 +1,46 @@
+/*
+
+T.C. - O(N^2) -- if the array has the element in reverse order(like if n = 5 the arr = 5 4 3 2 1 then it will take O(N^2))
+if array is alreay sorted then the time complexity is O(N).
+Space time complexity - O(1)
+Stable - Yes
+Inplace - Yes
+
+
+*/
+
+
+import java.util.*;
+public class Main
+{
+    public static void insertion_sort(int arr[],int n)
+    {
+        for(int i = 1;i<n;i++)
+        {
+            int min = arr[i];
+            int j = i - 1;
+            while(j>=0 && min<arr[j])
+            {
+                arr[j+1] = arr[j];
+                j--;
+            }
+            //min = arr[i];
+            arr[j+1] = min;
+        }
+        for(int i = 0;i<n;i++)
+        {
+            System.out.print(arr[i]+"\t");
+        }
+    }
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int[] arr = new int[n];
+		for(int i = 0;i<n;i++)
+		{
+		    arr[i] = sc.nextInt();
+		}
+		insertion_sort(arr,n);
+	}
+}
